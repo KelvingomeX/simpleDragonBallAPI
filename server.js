@@ -54,18 +54,18 @@ const characters={
 }
 
     
-    // app.get('/', (req, res)=>{
-    //     res.sendFile(__dirname + "/index.html")
-    // })
+    app.get('/', (req, res)=>{
+        res.sendFile(__dirname + "/index.html")
+    })
     
     
-    app.get('/api', (req, res)=> {
-        // const charactersDB = req.params.characterDB.toLowerCase()
-        // if(characters[charactersDB]){
-        res.json(characters)
-        // } else{
-        //     res.json(characters[`yamcha`])
-        // }
+    app.get('/api/:characterDB', (req, res)=> {
+        const charactersDB = req.params.characterDB.toLowerCase()
+        if(characters[charactersDB]){
+        res.json(characters[charactersDB])
+        } else{
+            res.json(characters[`yamcha`])
+        }
     })
     
     
