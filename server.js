@@ -1,11 +1,10 @@
+const express = require('express');
+const serverless = require('serverless-http');
 
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const PORT = 8000
+const app = express();
+const router = express.Router();
+const PORT = 8000;
 
-
-app.use(cors())
 
 const characters={
     'goku': {
@@ -52,23 +51,24 @@ const characters={
     }
     
 }
-
-    
-    app.get('/', (req, res)=>{
-        res.sendFile(__dirname + "/index.html")
-    })
-    
-    
-    app.get('/api/:characterDB', (req, res)=> {
-        const charactersDB = req.params.characterDB.toLowerCase()
-        if(characters[charactersDB]){
-        res.json(characters[charactersDB])
-        } else{
-            res.json(characters[`yamcha`])
-        }
-    })
-    
-    
+router.get('/', (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+  });
+  
+  router.get('/api/:characterDB', (req, res) => {
+    const characterDB = req.params.characterDB.toLowerCase();
+    if (characters[characterDB]) {
+      res.json(characters[characterDB]);
+    } else {
+      res.json(characters['yamcha']);
+    }
+  });
+  
+  app.use(express.json());
+  app.use('/.netlify/functions/api', router); // Use a base path for the API
+  
+  module.exports = app;
+  module.exports.handler = serverless(app);
     
     app.listen(process.env.PORT || PORT, ()=>{
         console.log(`The server is running on port ${PORT}! You better go catch it!`)
