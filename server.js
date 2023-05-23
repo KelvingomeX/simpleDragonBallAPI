@@ -49,14 +49,14 @@ const characters={
         "superSpecial-2": "Die",
         "img":"https://e.rpp-noticias.io/large/2022/03/18/121112_1233510.jpg"
 
-    },
+    }
     
 }
 
     
-    app.get('/', (req, res)=>{
-        res.sendFile(__dirname + "/index.html")
-    })
+    // app.get('/', (req, res)=>{
+    //     res.sendFile(__dirname + "/index.html")
+    // })
     
     
     app.get('/api', (req, res)=> {
