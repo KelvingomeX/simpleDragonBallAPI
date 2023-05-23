@@ -53,21 +53,23 @@ const characters={
     
 }
 
-
-app.get('/',(req, res)=>{
-    res.sendFile(__dirname + '/index.html')
-})
-
-app.get('/api/:characterDB', (req,res)=>{
+    
+    app.get('/', (req, res)=>{
+        res.sendFile(__dirname + "/index.html")
+    })
+    
+    
+    app.get('/api/:characterDB', (req, res)=> {
         const charactersDB = req.params.characterDB.toLowerCase()
         if(characters[charactersDB]){
-            res.json(characters[charactersDB])
-        }else{
-            res.json(characters['yamcha'])
+        res.json(characters[charactersDB])
+        } else{
+            res.json(characters[`yamcha`])
         }
     })
     
-app.listen(process.env.PORT || PORT, ()=>{
+    
+    
+    app.listen(process.env.PORT || PORT, ()=>{
         console.log(`The server is running on port ${PORT}! You better go catch it!`)
     })
-    

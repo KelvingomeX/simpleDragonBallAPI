@@ -8,8 +8,8 @@ async function run(){
       // document.querySelector("#personName").textContent = data.
       // document.querySelector("#personStatus").textContent = data.status
       // document.querySelector("#personOccupation").textContent = data.currentOccupation
-    } catch (error) {
-      console.error(error);
+    } catch(error) {
+      console.error(error)
     }
   }
   document.querySelector("button").addEventListener("click", run);
