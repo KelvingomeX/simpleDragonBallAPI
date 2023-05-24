@@ -58,7 +58,12 @@ const characters={
         res.sendFile(__dirname + "/index.html")
     })
     
-    
+    app.get('/api', (req, res)=> {
+        
+        res.json(characters)
+       
+    })
+
     app.get('/api/:characterDB', (req, res)=> {
         const charactersDB = req.params.characterDB.toLowerCase()
         if(characters[charactersDB]){
