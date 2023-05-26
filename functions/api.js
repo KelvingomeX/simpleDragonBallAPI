@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-
+const PORT = 8000
 app.use(cors());
 
 const characters = {
@@ -65,3 +65,7 @@ app.get('/characters/:characterDB', (req, res) => {
 });
 
 module.exports = app;
+
+app.listen(PORT, ()=>{
+  console.log(`The server is running on port ${PORT}! You better go catch it!`)
+})
