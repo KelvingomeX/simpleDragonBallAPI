@@ -6,6 +6,7 @@ app.use(cors());
 
 const characters = {
   'goku': {
+    'name':'goku',
     "powerLevel": 1000000,
     "healthPoints": 250,
     "specialMove": "Kamehameha",
@@ -14,6 +15,7 @@ const characters = {
     "img": "https://static.wikia.nocookie.net/dragonball/images/e/e4/Goku_arrives_colored.PNG/revision/latest?cb=20210204093245"
   },
   'vegeta': {
+    'name':'vegeta',
     "powerLevel": 999999,
     "healthPoints": 250,
     "specialMove": "Garlick Gun",
@@ -22,6 +24,7 @@ const characters = {
     "img": "https://static.wikia.nocookie.net/dragonball/images/2/2c/Vegeta_Manga.png/revision/latest?cb=20210903211722"
   },
   'gohan': {
+    'name':'gohan',
     "powerLevel": 995000,
     "healthPoints": 250,
     "specialMove": "Masenko",
@@ -30,6 +33,7 @@ const characters = {
     "img": "https://static.wikia.nocookie.net/dragonball/images/5/51/Dragon_Ball_Gohan_Kanzenban.png/revision/latest?cb=20210903210235"
   },
   'picolo': {
+    "name":'picolo',
     "powerLevel": 900000,
     "healthPoints": 250,
     "specialMove": "Masenko",
@@ -38,6 +42,7 @@ const characters = {
     "img": "https://static.wikia.nocookie.net/dragonball/images/c/c2/Piccolomanga.png/revision/latest?cb=20160826150304"
   },
   'yamcha': {
+    "name":'yamcha',
     "powerLevel": 4000,
     "healthPoints": 250,
     "specialMove": "Wolf Fang Fist.",
